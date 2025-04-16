@@ -20,7 +20,7 @@ const signUpSchema = z
 
 type SignUpSchema = z.infer<typeof signUpSchema>
 
-const AuthForm = () => {
+const SUAuthForm = ({setLogin}: {setLogin: Function}) => {
 
    const {
       register,
@@ -73,10 +73,10 @@ const AuthForm = () => {
             <p>{`${errors.confirmPassword.message}`}</p>
          )}
          <button type='submit' disabled={isSubmitting}>Регистрация</button>
-         <p>Уже есть аккаунт? <a href='#'>Войти</a></p>
+         <p>Уже есть аккаунт? <a href="#" onClick={(e) => {e.preventDefault; setLogin(false)}}>Войти</a></p>
       </form>
     </div>
   )
 }
 
-export default AuthForm
+export default SUAuthForm
