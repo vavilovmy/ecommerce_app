@@ -1,0 +1,57 @@
+.formWrapper {
+   width: 1000px;
+   height: 1000px;
+   margin: 0 auto;
+   background-color: #dee3e4;
+}
+
+.authForm {
+   width: 350px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+     input, button {
+      height: 40px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+     }
+     input {
+      padding-left: 15px;
+      &:focus {
+         outline: 2px solid black;
+      }
+
+      &:nth-child(1) {
+         margin-top: 30vh;
+      }
+     }
+     button {
+       background-color: #3b82ef;
+       color: white;
+       cursor: pointer;
+       &:hover {
+         background-color: blue;
+       }
+       &:disabled {
+         background-color: gray;
+       }
+     }
+     input + p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(255, 0, 0, 0.1);
+      color: red;
+      width: 350px;
+      height: 30px;
+     }
+     p {
+      margin: 0 auto;
+      a {
+         color: blue;
+         text-decoration: none;
+      }
+     }
+}
