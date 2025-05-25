@@ -1,26 +1,26 @@
 "use client"
 
 import React, { useEffect } from 'react'
-import styles from '../styles/AuthForm.module.css'
+import styles from './AuthForm.module.scss'
 import { useForm } from 'react-hook-form'
 import { FieldValues } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-
-const signInSchema = z
+const signUpSchema = z
    .object({
       email: z.string().email( {message: 'Некорректный email'} ),
       password: z.string().min(10, 'Минимальная длина - 10 символов'),
+      confirmPassword: z.string(),
    })
-   // .refine((data) => data.password === data.confirmPassword, {
-   //    message: 'Пароли должны совпадать',
-   //    path: ['confirmPassword']
-   // })
+   .refine((data) => data.password === data.confirmPassword, {
+      message: 'Пароли должны совпадать',
+      path: ['confirmPassword']
+   })
 
-type SignUpSchema = z.infer<typeof signInSchema>
+type SignUpSchema = z.infer<typeof signUpSchema>
 
-const SIAuthForm = ({setLogin}: {setLogin: Function}) => {
+const SUAuthForm = ({setLogin}: {setLogin: Function}) => {
 
    const {
       register,
@@ -31,7 +31,7 @@ const SIAuthForm = ({setLogin}: {setLogin: Function}) => {
       watch,
       trigger
    } = useForm<SignUpSchema>({
-      resolver: zodResolver(signInSchema)
+      resolver: zodResolver(signUpSchema)
    })
 
    const submitHandler = async (data: FieldValues) => {
@@ -64,11 +64,19 @@ const SIAuthForm = ({setLogin}: {setLogin: Function}) => {
          {errors.password && (
             <p>{`${errors.password.message}`}</p>
          )}
-         <button type='submit' disabled={isSubmitting}>Вход</button>
-         <p>Нет аккаунта? <a href='#' onClick={(e) => {e.preventDefault; setLogin(true)}}>Зарегистрироваться</a></p>
+         <input 
+            {...register('confirmPassword')}
+            type='password' 
+            placeholder='Повторите пароль'
+         />
+         {isSubmitted && errors.confirmPassword && (
+            <p>{`${errors.confirmPassword.message}`}</p>
+         )}
+         <button type='submit' disabled={isSubmitting}>Регистрация</button>
+         <p>Уже есть аккаунт? <a href="#" onClick={(e) => {e.preventDefault; setLogin(false)}}>Войти</a></p>
       </form>
     </div>
   )
 }
 
-export default SIAuthForm
+export default SUAuthForm

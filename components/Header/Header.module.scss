@@ -1,0 +1,40 @@
+.header {
+   background-color: #000022;
+   color: var(--textColor-seconary);
+   font-weight: 200;
+   width: 100vw;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      height: 100%;
+
+      li {
+         font-size: 22px;
+         display: flex;
+         align-items: center;
+         height: 100%;
+         padding: 0 20px;
+         transition: 0.2s all ease-in;
+         
+         &:hover {
+            background-color: var(--textColor-seconary);
+            color: var(--textColor-primary);
+            cursor: pointer;
+         }
+      }
+   }
+}

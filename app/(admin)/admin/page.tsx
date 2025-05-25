@@ -1,0 +1,17 @@
+"use client"
+
+import SUAuthForm from "@/components/LoginForm/SUAuthForm";
+import SIAuthForm from "@/components/LoginForm/SIAuthForm";
+import React from "react";
+import { useState } from "react";
+
+export default function Home() {
+  
+  const [isRegister, setIsRegister] = useState(false)
+
+  return (
+    <>
+      
+    </>
+  );
+}

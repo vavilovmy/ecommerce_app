@@ -1,5 +1,27 @@
+:root {
+   --backgroundColor-primary: #dee3e4;
+   --color-primary: #000022;
+   --color-warning: #993955;
+   --color-accent: #C3D898;
+   --textColor-primary: black;
+   --textColor-seconary: white;
+   
+}
+
 body {
    margin: 0;
    padding: 0;
-   background-color: #dee3e4;
+   font-family: var(--font-inter);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   box-sizing: border-box;
+   background-color: var(--backgroundColor-primary);
+}
+
+main {
+   background-color: var(--color-accent);
+   width: 100%;
+   max-width: 1560px;
 }
