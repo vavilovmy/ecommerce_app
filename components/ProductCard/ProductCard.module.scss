@@ -1,0 +1,76 @@
+.cardWrapper {
+   background-color: white;
+   max-width: 480px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 25px;
+   overflow: hidden;
+   box-shadow: 5px 5px 5px rgba(112, 112, 112, 0.082);
+   margin: 0 10px;
+
+   img {
+      object-fit: fill;
+      max-width: 480px;
+      height: 300px;
+   }
+
+   h3, p {
+      margin: 0 20px;
+      padding: 0;
+   }
+
+   h3 {
+      margin: 20px 0 0 20px;
+   }
+
+   .purchaseBtn {
+      width: 45%;
+      height: 40px;
+      margin: 15px 0;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      background-color: var(--color-primary);
+      color: var(--textColor-seconary);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+
+      &:hover {
+         background-color: var(--color-accent);
+      }
+      
+   }
+
+   .buttonWrapper {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: auto;
+   }
+
+   .price {
+      color: var(--textColor-third)
+   }
+
+   .description {
+      margin-top: 15px;
+   }
+}
+
+@media screen and (max-width: 1018px) {
+   .cardWrapper {
+      .buttonWrapper {
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         gap: 0;
+         margin: 15px 0;
+      }
+   
+      .purchaseBtn {
+         width: 95%;
+         margin: 5px 0;
+      }
+   }
+}

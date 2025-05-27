@@ -2,10 +2,10 @@
    --backgroundColor-primary: #dee3e4;
    --color-primary: #000022;
    --color-warning: #993955;
-   --color-accent: #C3D898;
+   --color-accent: #19647e;
    --textColor-primary: black;
    --textColor-seconary: white;
-   
+   --textColor-third: gray;
 }
 
 body {
@@ -21,7 +21,8 @@ body {
 }
 
 main {
-   background-color: var(--color-accent);
    width: 100%;
    max-width: 1560px;
+   display: flex;
+   flex-direction: column;
 }

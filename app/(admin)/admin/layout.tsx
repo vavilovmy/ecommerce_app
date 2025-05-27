@@ -7,12 +7,15 @@ function shopLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <>
-         <Header headings={['главная', "товары", "мои заказы"]}/>
-         <main>
-            {children}
-         </main>
-      </>
+    <>
+      <Header 
+        headings={['статистика', "товары", "клиенты", "продажи"]} 
+        links={["/admin", "/admin/products", "/admin/clients", "/admin/sales"]}
+      />
+      <main>
+        {children}
+      </main>
+    </>
   )
 }
 

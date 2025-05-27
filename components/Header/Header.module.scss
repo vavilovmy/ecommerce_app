@@ -13,6 +13,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      a {
+         text-decoration: none;
+         color: var(--textColor-seconary)
+      }
    }
 
    ul {
@@ -21,6 +25,11 @@
       margin: 0;
       display: flex;
       height: 100%;
+
+      .activeLink {
+         background-color: var(--textColor-seconary);
+         color: var(--textColor-primary);
+      }
 
       li {
          font-size: 22px;
