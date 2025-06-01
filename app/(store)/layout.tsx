@@ -1,19 +1,20 @@
-import Header from '@/components/Header/Header'
-import React from 'react'
+import Header from "@/components/Header/Header"
+import React from "react"
 
 function shopLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-      <>
-         <Header headings={['главная', "товары", "мои заказы"]} links={['/', '/products', 'orders']}/>
-         <main>
-            {children}
-         </main>
-      </>
+    <>
+      <Header
+        headings={["главная", "товары", "мои заказы"]}
+        links={["/", "/products", "orders"]}
+      />
+      <main>{children}</main>
+    </>
   )
 }
 
-export default shopLayout;
+export default shopLayout

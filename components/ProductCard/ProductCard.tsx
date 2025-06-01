@@ -20,7 +20,7 @@ function ProductCard({
          alt=''
       />
       <h3>{heading}</h3>
-      <p className={styles.price}>$ {price}</p>
+      <p className={styles.price}>₽{price}</p>
       <p className={styles.description}>{description}</p>
       <div className={styles.buttonWrapper}>
          <button className={styles.purchaseBtn}>Приобрести</button>
